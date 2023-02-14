@@ -1,12 +1,10 @@
-kind: Service
 apiVersion: v1
+kind: Service
 metadata:
-  name:  httpd-service
+  name: httpd-rc
 spec:
   selector:
-    app:  httpd-rc
-  type:  LoadBalancer
+    name: httpd-rc
   ports:
-  - name:  httpd-port
-    port:  8080
-    targetPort:  9090
+  - port: 80
+    targetPort: 9090

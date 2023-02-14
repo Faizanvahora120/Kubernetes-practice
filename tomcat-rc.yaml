@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: tomcat-rs
+  labels:
+    app: tomcat-rs
+spec:
+  # modify replicas according to your case
+  replicas: 3
+  selector:
+    matchLabels:
+      app: tomcat-rs
+  template:
+    metadata:
+      labels:
+        app: tomcat-rs
+    spec:
+      containers:
+      - name: tomcat-rs
+        image: nginx/nginx
+        ports:
+        - name: web
+          containerPort:  8080
+          hostPort: 9090
+          protocol: TCP

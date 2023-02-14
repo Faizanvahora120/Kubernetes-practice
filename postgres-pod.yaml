@@ -12,7 +12,7 @@ spec:
     env:
     - name: POSTGRES_PASSWORD
       value: db@10
-    - name: POSGRES_USER
+    - name: POSTGRES_USER
       value: db@10
     - name: POSTGRES_DB
       value: mydb

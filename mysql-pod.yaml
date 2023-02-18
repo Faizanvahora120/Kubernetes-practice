@@ -10,8 +10,11 @@ spec:
   - name: "mysql-pod"
     image: "mysql:latest"
     env:
-    - name: DB_HOST
+    - name: MYSQL_ROOT_PASSWORD
       valueFrom:
         configMapKeyRef:
           name: myssql-pass
           key: password
+    ports:
+      - containerPort: 3306
+        name: mysql

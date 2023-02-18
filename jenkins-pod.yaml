@@ -1,12 +1,14 @@
 apiVersion: v1
-kind: Pod
+kind: Pod 
 metadata:
-  name: jenkins-pod
+  name: jenkins-pod 
   labels:
-    name: jenkins-pod
+    type: ci-cd 
 spec:
   containers:
   - name: jenkins-pod
     image: jenkins/jenkins
     ports:
       - containerPort: 8080
+        hostPort: 8080
+    
